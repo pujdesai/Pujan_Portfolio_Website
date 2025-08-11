@@ -42,11 +42,11 @@ const Contact: React.FC = () => {
       setSubmitStatus('success');
       setFormData({ name: '', email: '', subject: '', message: '' });
       // Reset status after 3 seconds to show normal send button
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     } catch (error) {
       setSubmitStatus('error');
       // Reset status after 3 seconds to show normal send button
-      setTimeout(() => setSubmitStatus('idle'), 3000);
+      setTimeout(() => setSubmitStatus('idle'), 5000);
     } finally {
       setIsSubmitting(false);
     }
