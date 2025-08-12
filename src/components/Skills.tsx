@@ -9,13 +9,13 @@ const Skills: React.FC = () => {
       icon: Palette, 
       title: "Frontend", 
       color: "blue",
-      skills: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS", "JavaScript", "TypeScript", "Java Swing", "Figma", "D3.js", "Plotly", "AG Grid"]
+      skills: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS", "JavaScript", "TypeScript", "Java Swing", "Figma", "D3.js", "Plotly", "AG Grid", "Framer Motion", "Vite"]
     },
     { 
       icon: Settings, 
       title: "Backend", 
       color: "emerald",
-      skills: ["Django", "Flask", "FastAPI", "Node.js", "Python", "Java", "C++"]
+      skills: ["Django", "Flask", "FastAPI", "Node.js", "Python", "Java", "C++", "PyDantic", "Uvicorn"]
     },
     { 
       icon: Database, 
@@ -33,7 +33,7 @@ const Skills: React.FC = () => {
       icon: Brain, 
       title: "AI & ML", 
       color: "pink",
-      skills: ["Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "Matplotlib", "Seaborn", "Vega-Altair", "Streamlit", "OpenAI", "TensorFlow", "Folium", "LLMs", "RAG"]
+      skills: ["Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "SciPy", "Matplotlib", "Seaborn", "Vega-Altair", "Streamlit", "OpenAI", "TensorFlow", "Folium", "LLMs", "RAG"]
     },
     { 
       icon: Wrench, 
