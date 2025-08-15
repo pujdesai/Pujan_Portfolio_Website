@@ -9,13 +9,13 @@ const Skills: React.FC = () => {
       icon: Palette, 
       title: "Frontend", 
       color: "blue",
-      skills: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS", "JavaScript", "TypeScript", "Java Swing", "Figma", "D3.js", "Plotly", "AG Grid", "Framer Motion", "Vite"]
+      skills: ["React", "Next.js", "Tailwind CSS", "HTML", "CSS", "JavaScript", "TypeScript", "Java Swing", "Figma", "AG Grid", "Framer Motion", "Vite", "Streamlit"]
     },
     { 
       icon: Settings, 
       title: "Backend", 
       color: "emerald",
-      skills: ["Django", "Flask", "FastAPI", "Node.js", "Python", "Java", "C++", "PyDantic", "Uvicorn"]
+      skills: ["Django", "Flask", "FastAPI", "Node.js", "PyDantic", "Uvicorn", "REST APIs", "Postman"]
     },
     { 
       icon: Database, 
@@ -27,19 +27,19 @@ const Skills: React.FC = () => {
       icon: Cloud, 
       title: "DevOps & Cloud", 
       color: "cyan",
-      skills: ["Git", "Docker", "AWS", "Microsoft Azure", "CI/CD"]
+      skills: ["Git", "Docker", "AWS", "Microsoft Azure", "CI/CD", "Unix/Linux"]
     },
     { 
       icon: Brain, 
       title: "AI & ML", 
       color: "pink",
-      skills: ["Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "SciPy", "Matplotlib", "Seaborn", "Vega-Altair", "Streamlit", "OpenAI", "TensorFlow", "Folium", "LLMs", "RAG"]
+      skills: ["Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "SciPy", "Matplotlib", "Seaborn", "Vega-Altair", "D3.js", "Plotly", "OpenAI", "TensorFlow", "Folium", "LLMs", "RAG"]
     },
     { 
       icon: Wrench, 
       title: "Other", 
       color: "amber",
-      skills: ["Postman", "Adobe Creative Suite", "VS Code", "Eclipse", "IntelliJ", "Unix/Linux", "DrRacket", "Bloomberg", "QuantLib", "MS Office Suite", "REST APIs"]
+      skills: ["Adobe Creative Suite", "VS Code", "Eclipse", "IntelliJ", "DrRacket", "Bloomberg", "QuantLib", "MS Office Suite", "Python", "Java", "C++"]
     }
   ];
 

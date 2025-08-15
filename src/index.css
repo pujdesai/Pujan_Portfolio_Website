@@ -110,3 +110,8 @@ button,
 .shine-animation {
   animation: shine 1.25s ease-out forwards;
 }
+
+/* Hide scrollbar for webkit browsers */
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
