@@ -86,9 +86,9 @@ const Projects: React.FC = () => {
   return (
     <>
       <Section>
-        <div className="relative z-10 h-full flex items-center justify-center p-24">
+        <div className="relative z-10 h-full flex items-center justify-center p-2 2xs:p-4 xs:p-6 sm:p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-24">
           <motion.div
-            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 w-full max-w-6xl max-h-[80vh] overflow-y-auto relative"
+            className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl xs:rounded-2xl md:rounded-2xl p-3 2xs:p-4 xs:p-6 sm:p-6 md:p-8 lg:p-8 xl:p-8 w-full max-w-6xl max-h-[85vh] overflow-y-auto relative"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -97,18 +97,18 @@ const Projects: React.FC = () => {
               msOverflowStyle: "none",
             }}
           >
-            {/* Logo in top-left corner */}
+            {/* Logo in top-left corner - Hidden below lg */}
             <img
               src="/assets/logo.png"
               alt="Logo"
-              className="absolute top-4 left-4 w-14 h-14 drop-shadow-lg"
+              className="absolute top-2 2xs:top-3 xs:top-4 sm:top-4 md:top-4 w-8 h-8 2xs:w-10 2xs:h-10 xs:w-12 xs:h-12 sm:w-14 sm:h-14 drop-shadow-lg hidden lg:block"
             />
             
             {/* Content Area */}
-            <div className="flex flex-col items-center justify-center h-full pt-16">
+            <div className="flex flex-col items-center justify-center h-full pt-8 2xs:pt-10 xs:pt-12 sm:pt-12 md:pt-12 lg:pt-16">
               {/* Stepper Timeline */}
               <motion.div
-                className="flex items-center justify-center mb-8 w-full max-w-4xl"
+                className="flex items-center justify-center mb-4 2xs:mb-6 xs:mb-6 sm:mb-6 md:mb-8 lg:mb-8 w-full max-w-4xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -117,7 +117,7 @@ const Projects: React.FC = () => {
                   <div key={index} className="flex items-center">
                     {/* Step Circle */}
                     <motion.div
-                      className={`w-8 h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
+                      className={`w-4 h-4 2xs:w-5 2xs:h-5 xs:w-6 xs:h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
                         index === currentStep
                           ? 'bg-indigo-600 border-indigo-600 text-white'
                           : index < currentStep
@@ -126,14 +126,14 @@ const Projects: React.FC = () => {
                       }`}
                       whileHover={{ scale: 1.1 }}
                     >
-                      <span className="text-xs font-secondary font-medium">
+                      <span className="text-[8px] 2xs:text-[9px] xs:text-[10px] sm:text-xs md:text-xs font-secondary font-medium">
                         {index + 1}
                       </span>
                     </motion.div>
                     
                     {/* Connector Line */}
                     {index < totalSteps - 1 && (
-                      <div className={`w-32 h-0.5 transition-all duration-300 ${
+                      <div className={`w-8 2xs:w-10 xs:w-12 sm:w-16 md:w-20 lg:w-24 xl:w-28 2xl:w-32 h-0.5 transition-all duration-300 ${
                         index < currentStep ? 'bg-indigo-400' : 'bg-white/20'
                       }`} />
                     )}
@@ -155,25 +155,25 @@ const Projects: React.FC = () => {
                    {/* Project Icon */}
                    {ProjectIcon && (
                      <motion.div
-                       className="flex justify-center mb-8"
+                       className="flex justify-center mb-4 2xs:mb-6 xs:mb-6 sm:mb-6 md:mb-8 lg:mb-8"
                        initial={{ opacity: 0, y: 20 }}
                        animate={{ opacity: 1, y: 0 }}
                        transition={{ duration: 0.4, delay: 0.1 }}
                      >
                        <motion.div
-                         className="p-3 bg-indigo-600/20 border border-indigo-400/30 rounded-xl"
+                         className="p-2 2xs:p-2.5 xs:p-3 sm:p-3 md:p-3 bg-indigo-600/20 border border-indigo-400/30 rounded-xl"
                          initial={{ opacity: 0, scale: 0.8 }}
                          animate={{ opacity: 1, scale: 1 }}
                          transition={{ duration: 0.4, delay: 0.2 }}
                        >
-                         <ProjectIcon className="w-8 h-8 text-indigo-400" />
+                         <ProjectIcon className="w-6 h-6 2xs:w-7 2xs:h-7 xs:w-8 xs:h-8 sm:w-8 sm:h-8 md:w-8 md:h-8 text-indigo-400" />
                        </motion.div>
                      </motion.div>
                    )}
 
                    {/* Project Title */}
                    <motion.h2 
-                     className="text-3xl uppercase font-primary text-white mb-4 text-center"
+                     className="text-lg 2xs:text-xl xs:text-2xl sm:text-2xl md:text-3xl lg:text-3xl uppercase font-primary text-white mb-2 2xs:mb-3 xs:mb-3 sm:mb-3 md:mb-4 lg:mb-4 text-center px-2"
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 0.4, delay: 0.3 }}
@@ -183,7 +183,7 @@ const Projects: React.FC = () => {
                    
                    {/* Project Description */}
                    <motion.p 
-                     className="text-sm font-secondary text-white/80 leading-relaxed mb-6 text-center"
+                     className="text-xs 2xs:text-sm xs:text-sm sm:text-sm md:text-sm lg:text-sm font-secondary text-white/80 leading-relaxed mb-4 2xs:mb-5 xs:mb-5 sm:mb-5 md:mb-6 lg:mb-6 text-center px-2"
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 0.4, delay: 0.2 }}
@@ -194,7 +194,7 @@ const Projects: React.FC = () => {
                    {/* Skills Pills */}
                    {currentProject.skills.length > 0 && (
                      <motion.div 
-                       className="flex flex-wrap justify-center gap-3 mb-8"
+                       className="flex flex-wrap justify-center gap-2 2xs:gap-2 xs:gap-2 sm:gap-3 md:gap-3 lg:gap-3 mb-4 2xs:mb-6 xs:mb-6 sm:mb-6 md:mb-8 lg:mb-8 px-2"
                        initial={{ opacity: 0, y: 20 }}
                        animate={{ opacity: 1, y: 0 }}
                        transition={{ duration: 0.4, delay: 0.3 }}
@@ -202,13 +202,13 @@ const Projects: React.FC = () => {
                        {currentProject.skills.map((skill, index) => (
                          <motion.div
                            key={skill}
-                           className="px-3 py-1 bg-indigo-400/20 border border-indigo-400/30 rounded-full"
+                           className="px-2 py-1 2xs:px-2.5 2xs:py-1 xs:px-3 xs:py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 bg-indigo-400/20 border border-indigo-400/30 rounded-full"
                            initial={{ opacity: 0, scale: 0.8 }}
                            animate={{ opacity: 1, scale: 1 }}
                            transition={{ delay: 0.4 + index * 0.05, duration: 0.3 }}
                            whileHover={{ scale: 1.05 }}
                          >
-                           <span className="text-xs font-secondary text-white/80 whitespace-nowrap">
+                           <span className="text-xs 2xs:text-xs xs:text-xs sm:text-xs md:text-xs font-secondary text-white/80 whitespace-nowrap">
                              {skill}
                            </span>
                          </motion.div>
@@ -218,7 +218,7 @@ const Projects: React.FC = () => {
 
                    {/* Project Buttons */}
                    <motion.div 
-                     className="flex items-center justify-center gap-4"
+                     className="flex flex-col xs:flex-row items-center justify-center gap-3 2xs:gap-3 xs:gap-4 sm:gap-4 md:gap-4 lg:gap-4"
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
                      transition={{ duration: 0.4, delay: 0.5 }}
@@ -229,14 +229,14 @@ const Projects: React.FC = () => {
                          href={currentProject.githubUrl}
                          target="_blank"
                          rel="noopener noreferrer"
-                         className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-secondary rounded-lg transition-all duration-300 flex items-center gap-2 border border-white/20"
+                         className="px-4 py-2 2xs:px-5 2xs:py-2 xs:px-6 xs:py-3 sm:px-6 sm:py-3 md:px-6 md:py-3 lg:px-6 lg:py-3 bg-white/10 hover:bg-white/20 text-white font-secondary rounded-lg transition-all duration-300 flex items-center gap-2 border border-white/20 text-sm 2xs:text-sm xs:text-sm sm:text-sm md:text-sm lg:text-sm"
                          whileHover={{ scale: 1.05 }}
                          whileTap={{ scale: 0.95 }}
                        >
                          <img 
                            src="/assets/github.png" 
                            alt="GitHub" 
-                           className="w-5 h-5 filter invert brightness-0"
+                           className="w-4 h-4 2xs:w-4 2xs:h-4 xs:w-5 xs:h-5 sm:w-5 sm:h-5 md:w-5 md:h-5 filter invert brightness-0"
                          />
                          GitHub
                        </motion.a>
@@ -255,11 +255,11 @@ const Projects: React.FC = () => {
                              setShowDemo(true);
                            }
                          }}
-                         className="px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-secondary rounded-lg transition-all duration-300 flex items-center gap-2"
+                         className="px-4 py-2 2xs:px-5 2xs:py-2 xs:px-6 xs:py-3 sm:px-6 sm:py-3 md:px-6 md:py-3 lg:px-6 lg:py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-secondary rounded-lg transition-all duration-300 flex items-center gap-2 text-sm 2xs:text-sm xs:text-sm sm:text-sm md:text-sm lg:text-sm"
                          whileHover={{ scale: 1.05 }}
                          whileTap={{ scale: 0.95 }}
                        >
-                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                         <svg className="w-4 h-4 2xs:w-4 2xs:h-4 xs:w-5 xs:h-5 sm:w-5 sm:h-5 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                          </svg>
                          Demo
@@ -271,7 +271,7 @@ const Projects: React.FC = () => {
 
               {/* Navigation Buttons - Inside Card */}
               <motion.div
-                className="flex items-center justify-between w-full max-w-4xl mt-8"
+                className="flex items-center justify-between w-full max-w-4xl mt-4 2xs:mt-6 xs:mt-6 sm:mt-6 md:mt-8 lg:mt-8"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -281,14 +281,14 @@ const Projects: React.FC = () => {
                   {currentStep > 0 && (
                     <motion.button
                       onClick={handlePrev}
-                      className="w-12 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-all duration-300 flex items-center justify-center"
+                      className="w-10 h-10 2xs:w-11 2xs:h-11 xs:w-12 xs:h-12 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-all duration-300 flex items-center justify-center"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.8 }}
                     >
-                      <ChevronLeft className="w-5 h-5" />
+                      <ChevronLeft className="w-5 h-5 2xs:w-5 2xs:h-5 xs:w-5 xs:h-5 sm:w-5 sm:h-5 md:w-5 md:h-5" />
                     </motion.button>
                   )}
                 </div>
@@ -298,14 +298,14 @@ const Projects: React.FC = () => {
                   {currentStep < totalSteps - 1 && (
                     <motion.button
                       onClick={handleNext}
-                      className="w-12 h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-all duration-300 flex items-center justify-center"
+                      className="w-10 h-10 2xs:w-11 2xs:h-11 xs:w-12 xs:h-12 sm:w-12 sm:h-12 md:w-12 md:h-12 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-all duration-300 flex items-center justify-center"
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ opacity: 1, scale: 1 }}
                       exit={{ opacity: 0, scale: 0.8 }}
                     >
-                      <ChevronRight className="w-5 h-5" />
+                      <ChevronRight className="w-5 h-5 2xs:w-5 2xs:h-5 xs:w-5 xs:h-5 sm:w-5 sm:h-5 md:w-5 md:h-5" />
                     </motion.button>
                   )}
                 </div>
