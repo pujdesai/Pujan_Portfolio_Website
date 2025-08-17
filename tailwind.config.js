@@ -8,6 +8,7 @@ export default {
         secondary: ["Preospe", "sans-serif"],
       },
       screens: {
+        '2xs': '320px',
         'xs': '480px',
         'sm': '600px',
         'md': '800px',

@@ -252,7 +252,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
           {/* Skip Button - Bottom right corner */}
           <motion.button
             onClick={onComplete}
-            className="absolute bottom-4 right-4 px-2 py-1 xs:px-3 xs:py-2 sm:px-3 sm:py-2 md:px-4 md:py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-primary hover:bg-white/20 transition-all duration-300 z-50 text-xs xs:text-sm sm:text-sm md:text-base"
+            className="absolute bottom-4 right-4 px-1 py-1 2xs:px-2 2xs:py-1 xs:px-3 xs:py-2 sm:px-3 sm:py-2 md:px-4 md:py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-primary hover:bg-white/20 transition-all duration-300 z-50 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-base"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ 
               opacity: startBarFadeOut ? 0 : 1, 
@@ -267,7 +267,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
 
           {showBar && (
             <motion.div
-              className="absolute inset-0 flex flex-col items-center justify-center z-20 px-2 xs:px-3 sm:px-4 md:px-8"
+              className="absolute inset-0 flex flex-col items-center justify-center z-20 px-1 2xs:px-2 xs:px-3 sm:px-4 md:px-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: startBarFadeOut ? 0 : 1,
@@ -276,12 +276,12 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
               transition={{ duration: 1.2, ease: "easeInOut" }}
             >
               {/* Cycling Text Messages - Responsive text size */}
-              <div className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-primary text-center mb-4 xs:mb-5 sm:mb-6 md:mb-8 px-2 xs:px-3 sm:px-4">
+              <div className="text-xs 2xs:text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-primary text-center mb-3 2xs:mb-4 xs:mb-5 sm:mb-6 md:mb-8 px-1 2xs:px-2 xs:px-3 sm:px-4">
                 {messages[currentMessage]}
               </div>
 
               {/* Progress Bar - Responsive width */}
-              <div className="w-64 xs:w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] h-1.5 xs:h-2 sm:h-2 md:h-3 bg-white/30 rounded-full overflow-hidden shadow-[0_0_10px_rgba(255,255,255,0.6)] mb-4 xs:mb-5 sm:mb-6 md:mb-8">
+              <div className="w-56 2xs:w-64 xs:w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] h-1 2xs:h-1.5 xs:h-2 sm:h-2 md:h-3 bg-white/30 rounded-full overflow-hidden shadow-[0_0_10px_rgba(255,255,255,0.6)] mb-3 2xs:mb-4 xs:mb-5 sm:mb-6 md:mb-8">
                 <motion.div
                   className="h-full bg-white/90 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)]"
                   initial={{ width: 0 }}
@@ -298,7 +298,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
               </div>
 
               {/* Live Percentage with CountUp - Responsive text size */}
-              <div className="text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-primary text-white">
+              <div className="text-sm 2xs:text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-primary text-white">
                 <CountUp
                   to={Math.round(progress)}
                   from={0}
