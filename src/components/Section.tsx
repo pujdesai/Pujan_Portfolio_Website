@@ -31,7 +31,7 @@ const Section: React.FC<SectionProps> = ({ children }) => {
       </div>
 
       {/* Floating particles */}
-      {[...Array(40)].map((_, i) => (
+      {[...Array(50)].map((_, i) => (
         <motion.div
           key={`particle-${i}`}
           className="absolute w-1 h-1 bg-blue-400 rounded-full"

@@ -4,8 +4,16 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        nexora: ["Nexora", "sans-serif"],
-        preospe: ["Preospe", "sans-serif"],
+        primary: ["Nexora", "sans-serif"],
+        secondary: ["Preospe", "sans-serif"],
+      },
+      screens: {
+        'xs': '480px',
+        'sm': '600px',
+        'md': '800px',
+        'lg': '1096px',
+        'xl': '1366px',
+        '2xl': '1600px',
       },
     },
   },

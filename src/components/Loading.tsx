@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from "react";
-import Spline from "@splinetool/react-spline";
 import { motion, AnimatePresence, useInView, useMotionValue, useSpring } from "framer-motion";
 
 interface LoadingProps {
@@ -131,7 +130,6 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
   const [showBar, setShowBar] = useState(false);
   const [fillComplete, setFillComplete] = useState(false);
   const [startBarFadeOut, setStartBarFadeOut] = useState(false);
-  const [startRobotFadeOut, setStartRobotFadeOut] = useState(false);
   const [done, setDone] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentMessage, setCurrentMessage] = useState(0);
@@ -191,31 +189,22 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
 
   useEffect(() => {
     if (fillComplete) {
-      const barFadeOutDelay = setTimeout(() => {
+      const fadeOutDelay = setTimeout(() => {
         setStartBarFadeOut(true);
-      }, 500);
-      return () => clearTimeout(barFadeOutDelay);
+      }, 1000);
+      return () => clearTimeout(fadeOutDelay);
     }
   }, [fillComplete]);
 
   useEffect(() => {
     if (startBarFadeOut) {
-      const robotFadeOutDelay = setTimeout(() => {
-        setStartRobotFadeOut(true);
-      }, 1250);
-      return () => clearTimeout(robotFadeOutDelay);
-    }
-  }, [startBarFadeOut]);
-
-  useEffect(() => {
-    if (startRobotFadeOut) {
       const doneTimeout = setTimeout(() => {
         setDone(true);
         onComplete();
       }, 1250);
       return () => clearTimeout(doneTimeout);
     }
-  }, [startRobotFadeOut, onComplete]);
+  }, [startBarFadeOut, onComplete]);
 
   return (
     <AnimatePresence>
@@ -223,28 +212,52 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
         <motion.div
           className="relative w-screen h-screen overflow-hidden bg-black"
           initial={{ opacity: 1, x: 0 }}
-          animate={{ opacity: startRobotFadeOut ? 0 : 1 }}
+          animate={{ opacity: startBarFadeOut ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 4, ease: "easeInOut" }}
         >
-          <motion.div
-            className="relative z-10 flex items-center justify-center w-full h-full"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{
-              opacity: startRobotFadeOut ? 0 : 1,
-              y: 0,
-            }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          >
-            <Spline scene="https://prod.spline.design/SyN0I65y1uXR4oRs/scene.splinecode" />
-          </motion.div>
+          {/* Section background - behind everything */}
+          <div className="absolute inset-0">
+            <div className="w-full h-full" style={{
+              backgroundImage: `
+                radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 50%)
+              `
+            }} />
+          </div>
 
-          {/* Skip Button */}
+          {/* Floating particles */}
+          {[...Array(50)].map((_, i) => (
+            <motion.div
+              key={`particle-${i}`}
+              className="absolute w-1 h-1 bg-blue-400 rounded-full"
+              style={{
+                left: `${(i * 7) % 100}%`,
+                top: `${(i * 11) % 100}%`,
+              }}
+              animate={{
+                y: [0, -30, 0],
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: 4.5 + (i % 3),
+                repeat: Infinity,
+                delay: (i * 0.2) % 3,
+              }}
+            />
+          ))}
+
+          {/* Skip Button - Bottom right corner */}
           <motion.button
             onClick={onComplete}
-            className="absolute bottom-20 right-8 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-primary hover:bg-white/20 transition-all duration-300 z-50"
+            className="absolute bottom-4 right-4 px-2 py-1 xs:px-3 xs:py-2 sm:px-3 sm:py-2 md:px-4 md:py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-primary hover:bg-white/20 transition-all duration-300 z-50 text-xs xs:text-sm sm:text-sm md:text-base"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ 
+              opacity: startBarFadeOut ? 0 : 1, 
+              scale: 1 
+            }}
             transition={{ duration: 0.6, delay: 1.0 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -254,7 +267,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
 
           {showBar && (
             <motion.div
-              className="absolute top-28 left-0 right-0 z-20 flex flex-col items-center"
+              className="absolute inset-0 flex flex-col items-center justify-center z-20 px-2 xs:px-3 sm:px-4 md:px-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: startBarFadeOut ? 0 : 1,
@@ -262,12 +275,13 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
               }}
               transition={{ duration: 1.2, ease: "easeInOut" }}
             >
-              {/* Cycling Text Messages */}
-              <div className="text-base text-white font-primary text-center mb-4">
+              {/* Cycling Text Messages - Responsive text size */}
+              <div className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl text-white font-primary text-center mb-4 xs:mb-5 sm:mb-6 md:mb-8 px-2 xs:px-3 sm:px-4">
                 {messages[currentMessage]}
               </div>
 
-              <div className="w-80 h-2 bg-white/30 rounded-full overflow-hidden shadow-[0_0_10px_rgba(255,255,255,0.6)] mb-4">
+              {/* Progress Bar - Responsive width */}
+              <div className="w-64 xs:w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[32rem] h-1.5 xs:h-2 sm:h-2 md:h-3 bg-white/30 rounded-full overflow-hidden shadow-[0_0_10px_rgba(255,255,255,0.6)] mb-4 xs:mb-5 sm:mb-6 md:mb-8">
                 <motion.div
                   className="h-full bg-white/90 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)]"
                   initial={{ width: 0 }}
@@ -283,8 +297,8 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
                 />
               </div>
 
-              {/* Live Percentage with CountUp */}
-              <div className="text-lg font-primary text-white">
+              {/* Live Percentage with CountUp - Responsive text size */}
+              <div className="text-lg xs:text-xl sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-primary text-white">
                 <CountUp
                   to={Math.round(progress)}
                   from={0}
