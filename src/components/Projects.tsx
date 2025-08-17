@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Globe, TrendingUp, Brain, Map, Gamepad2, Building2 } from "lucide-react";
 import Section from "./Section";
 
 const Projects: React.FC = () => {
@@ -44,7 +44,7 @@ const Projects: React.FC = () => {
       skills: ["React", "D3.js", "Plotly", "Altair", "Folium", "Pandas", "Framer Motion", "CSS", "Interactive Charts", "Responsive Design", "Geographic Analysis", "Data Visualization", "Jupyter Notebook", "HTML"]
     },
     {
-      title: "Chess Game",
+      title: "PvP Chess",
       description: "PvP chess game built with Pygame featuring multiple board themes, last-move highlighting, and valid moves display. Engineered with a modular, scalable architecture applying OOP practices to accelerate feature development and reduce technical debt. Implements all core chess mechanics including move validation, checkmate, stalemate, pawn promotion, en passant, and castling for a complete chess experience.",
       githubUrl: "https://github.com/pujdesai/PvP_Chess",
       hasDemo: true,
@@ -71,6 +71,18 @@ const Projects: React.FC = () => {
 
   const currentProject = projects[currentStep];
 
+  // Icon mapping for each project
+  const projectIcons = {
+    "Personal Portfolio Website": Globe,
+    "Stock Portfolio Application": TrendingUp,
+    "NBA Game Outcome Prediction Model": Brain,
+    "Car Theft Analysis in India": Map,
+    "PvP Chess": Gamepad2,
+    "Online Banking System": Building2
+  };
+
+  const ProjectIcon = projectIcons[currentProject.title as keyof typeof projectIcons];
+
   return (
     <>
       <Section>
@@ -96,7 +108,7 @@ const Projects: React.FC = () => {
             <div className="flex flex-col items-center justify-center h-full pt-16">
               {/* Stepper Timeline */}
               <motion.div
-                className="flex items-center justify-center mb-16 w-full max-w-4xl"
+                className="flex items-center justify-center mb-8 w-full max-w-4xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -140,12 +152,31 @@ const Projects: React.FC = () => {
                >
                  {/* Project Content */}
                  <div className="flex flex-col items-center w-full max-w-3xl">
+                   {/* Project Icon */}
+                   {ProjectIcon && (
+                     <motion.div
+                       className="flex justify-center mb-8"
+                       initial={{ opacity: 0, y: 20 }}
+                       animate={{ opacity: 1, y: 0 }}
+                       transition={{ duration: 0.4, delay: 0.1 }}
+                     >
+                       <motion.div
+                         className="p-3 bg-indigo-600/20 border border-indigo-400/30 rounded-xl"
+                         initial={{ opacity: 0, scale: 0.8 }}
+                         animate={{ opacity: 1, scale: 1 }}
+                         transition={{ duration: 0.4, delay: 0.2 }}
+                       >
+                         <ProjectIcon className="w-8 h-8 text-indigo-400" />
+                       </motion.div>
+                     </motion.div>
+                   )}
+
                    {/* Project Title */}
                    <motion.h2 
                      className="text-3xl uppercase font-primary text-white mb-4 text-center"
                      initial={{ opacity: 0, y: 20 }}
                      animate={{ opacity: 1, y: 0 }}
-                     transition={{ duration: 0.4, delay: 0.1 }}
+                     transition={{ duration: 0.4, delay: 0.3 }}
                    >
                      {currentProject.title}
                    </motion.h2>
@@ -312,7 +343,7 @@ const Projects: React.FC = () => {
               </button>
 
               {/* Navigation Controls - Only show for chess project */}
-              {currentProject.title === "Chess Game" && currentProject.demoUrl && (
+              {currentProject.title === "PvP Chess" && currentProject.demoUrl && (
                 <>
                   {/* Previous Button */}
                   <button
@@ -341,7 +372,7 @@ const Projects: React.FC = () => {
               {currentProject.demoUrl && (
                 <motion.img 
                   key={currentImageIndex}
-                  src={`/assets/${currentProject.title === "Chess Game" ? `chess${currentImageIndex + 1}.png` : currentProject.demoUrl}`}
+                  src={`/assets/${currentProject.title === "PvP Chess" ? `chess${currentImageIndex + 1}.png` : currentProject.demoUrl}`}
                   alt={`${currentProject.title} Demo`}
                   className="w-full h-auto max-h-[90vh] object-contain"
                   initial={{ opacity: 0, x: 20 }}
