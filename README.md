@@ -207,7 +207,7 @@ While this is a personal portfolio, suggestions and feedback are welcome!
 
 ## 📞 Contact
 
-- **Email**: pujan.desai@northeastern.edu
+- **Email**: desai.puj@northeastern.edu
 - **LinkedIn**: [Pujan Desai](https://linkedin.com/in/pujandesai)
 - **GitHub**: [pujdesai](https://github.com/pujdesai)
 
