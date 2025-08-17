@@ -59,7 +59,7 @@ const Skills: React.FC = () => {
     <Section>
       <div className="relative z-10 h-full flex items-center justify-center p-24">
         {/* Skills Grid */}
-        <div className="grid grid-cols-3 gap-20 w-full h-full max-w-8xl max-h-[95vh]">
+        <div className="grid grid-cols-3 gap-20 w-full h-full max-w-8xl max-h-[95vh] overflow-y-auto">
           {skillCategories.map((category, index) => {
             const colors = getColorClasses(category.color);
             return (
@@ -69,7 +69,7 @@ const Skills: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                whileHover={{ scale: 1.02 }}
+                whileHover={{ scale: 0.98 }}
               >
                 {/* Icon box and title in top-left corner */}
                 <motion.div

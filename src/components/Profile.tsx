@@ -38,7 +38,7 @@ const Profile: React.FC = () => {
           {/* Main content grid */}
           <div className="flex items-center justify-center h-full">
             <motion.div
-              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-16 max-w-4xl w-full max-h-[80vh]"
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-16 max-w-4xl w-full max-h-[80vh] overflow-y-auto"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.2 }}
