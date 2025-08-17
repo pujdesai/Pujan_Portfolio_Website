@@ -101,7 +101,7 @@ const About: React.FC = () => {
                   transition={{ duration: 0.6, delay: 0.4 }}
                 >
                   <motion.p
-                    className="text-lg font-secondary text-white/80 leading-relaxed"
+                    className="text-lg font-secondary text-white/80 leading-relaxed text-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
