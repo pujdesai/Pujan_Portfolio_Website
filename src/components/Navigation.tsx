@@ -34,7 +34,7 @@ const Navigation: React.FC = () => {
 
   return (
     <motion.div
-      className="relative flex w-screen h-screen bg-black p-16 z-0"
+      className="relative flex w-screen h-screen bg-black p-4 2xs:p-6 xs:p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 z-0"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -73,9 +73,9 @@ const Navigation: React.FC = () => {
         />
       ))}
 
-      {/* Orb - above background, below nav cards */}
+      {/* Orb - Only visible on lg+ screens */}
       <motion.div
-        className="absolute inset-0 z-10"
+        className="absolute inset-0 z-10 hidden lg:block"
         animate={{
           opacity: clickedIndex !== null ? 0 : 1,
         }}
@@ -100,102 +100,106 @@ const Navigation: React.FC = () => {
           />
         </div>
       </motion.div>
+
       {/* Navigation cards - above everything */}
-      <div className="relative flex w-full h-full gap-x-10 z-20">
+      <div className="relative flex w-full h-full gap-2 2xs:gap-3 xs:gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-10 z-20">
         <AnimatePresence mode="wait">
-          {shouldAnimate &&
-            navItems.map((item, index) => (
-              <motion.div
-                key={`${index}`}
-                className="flex-1 relative overflow-hidden rounded-3xl flex items-center justify-center bg-black border border-white/10"
-                initial={{ opacity: 0, y: 50 }}
-                animate={{
-                  opacity:
-                    clickedIndex !== null && clickedIndex !== index ? 0 : 1,
-                  y: 0,
-                  scale: hoveredIndex === index ? 1.02 : 1,
-                  x: clickedIndex === index ? "0%" : "0%",
-                  width: clickedIndex === index ? "100%" : "auto",
-                  height: clickedIndex === index ? "100%" : "auto",
-                  position: clickedIndex === index ? "absolute" : "relative",
-                  top: 0,
-                  left: 0,
-                  zIndex: clickedIndex === index ? 50 : 20,
-                }}
-                transition={{
-                  opacity: {
-                    duration: 0.5,
-                    ease: "easeOut",
-                    delay: 1 + index * 0.15,
-                  },
-                  y: {
-                    duration: 0.5,
-                    ease: "easeOut",
-                    delay: 1 + index * 0.15,
-                  },
-                  scale: { duration: 0.3, type: "spring", stiffness: 300 },
-                  width: { duration: 0.5, ease: "easeInOut" },
-                  height: { duration: 0.5, ease: "easeInOut" },
-                }}
-                style={{
-                  boxShadow:
-                    hoveredIndex === index && clickedIndex === null
-                      ? "0 10px 30px rgba(59, 130, 246, 0.3), 0 0 5px #e0d9f6"
-                      : "0 0 5px #e0d9f6",
-                }}
-                onClick={() => handleNavClick(item.path, index)}
-                onMouseEnter={() => {
-                  setHoveredIndex(index);
-                }}
-                onMouseLeave={() => {
-                  setHoveredIndex(null);
-                }}
-              >
-                {/* Glare effect overlay */}
-                <div
-                  key={`shine-${index}-${hoveredIndex}`}
-                  className={`absolute inset-0 rounded-3xl pointer-events-none ${
-                    hoveredIndex === index ? 'shine-animation' : ''
-                  }`}
-                  style={{
-                    background: `linear-gradient(135deg,
-                        transparent 0%,
-                        transparent 40%,
-                        rgba(255, 255, 255, 0.1) 50%,
-                        transparent 60%,
-                        transparent 100%)`,
-                    backgroundSize: "150% 150%",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "-100% -100%",
-                  }}
-                />
-                
-                <motion.h1
-                  className="font-primary text-white text-3xl tracking-wide uppercase z-10 relative"
+          {shouldAnimate && (
+            <div className="flex flex-col lg:flex-row gap-2 2xs:gap-3 xs:gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-10 w-full h-full">
+              {navItems.map((item, index) => (
+                <motion.div
+                  key={`${index}`}
+                  className="flex-1 relative overflow-hidden rounded-xl xs:rounded-2xl md:rounded-3xl flex items-center justify-center bg-black border border-white/10"
+                  initial={{ opacity: 0, y: 50 }}
                   animate={{
-                    scale:
-                      hoveredIndex === index && clickedIndex === null
-                        ? 1.05
-                        : 1,
-                    letterSpacing:
-                      hoveredIndex === index && clickedIndex === null
-                        ? "0.1em"
-                        : "0.05em",
                     opacity:
-                      clickedIndex !== null && clickedIndex !== index
-                        ? 0.85
-                        : 1,
+                      clickedIndex !== null && clickedIndex !== index ? 0 : 1,
+                    y: 0,
+                    scale: hoveredIndex === index ? 1.02 : 1,
+                    x: clickedIndex === index ? "0%" : "0%",
+                    width: clickedIndex === index ? "100%" : "auto",
+                    height: clickedIndex === index ? "100%" : "auto",
+                    position: clickedIndex === index ? "absolute" : "relative",
+                    top: 0,
+                    left: 0,
+                    zIndex: clickedIndex === index ? 50 : 20,
                   }}
                   transition={{
-                    scale: { type: "spring", stiffness: 400, damping: 10 },
-                    letterSpacing: { duration: 0.4, ease: "easeOut" },
-                    opacity: { duration: 0.3, ease: "easeOut" },
+                    opacity: {
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 1 + index * 0.15,
+                    },
+                    y: {
+                      duration: 0.5,
+                      ease: "easeOut",
+                      delay: 1 + index * 0.15,
+                    },
+                    scale: { duration: 0.3, type: "spring", stiffness: 300 },
+                    width: { duration: 0.5, ease: "easeInOut" },
+                    height: { duration: 0.5, ease: "easeInOut" },
+                  }}
+                  style={{
+                    boxShadow:
+                      hoveredIndex === index && clickedIndex === null
+                        ? "0 10px 30px rgba(59, 130, 246, 0.3), 0 0 5px #e0d9f6"
+                        : "0 0 5px #e0d9f6",
+                  }}
+                  onClick={() => handleNavClick(item.path, index)}
+                  onMouseEnter={() => {
+                    setHoveredIndex(index);
+                  }}
+                  onMouseLeave={() => {
+                    setHoveredIndex(null);
                   }}
                 >
-                  {item.name}
-                </motion.h1>
-              </motion.div>
-            ))}
+                  {/* Glare effect overlay */}
+                  <div
+                    key={`shine-${index}-${hoveredIndex}`}
+                    className={`absolute inset-0 rounded-xl xs:rounded-2xl md:rounded-3xl pointer-events-none ${
+                      hoveredIndex === index ? 'shine-animation' : ''
+                    }`}
+                    style={{
+                      background: `linear-gradient(135deg,
+                          transparent 0%,
+                          transparent 40%,
+                          rgba(255, 255, 255, 0.1) 50%,
+                          transparent 60%,
+                          transparent 100%)`,
+                      backgroundSize: "150% 150%",
+                      backgroundRepeat: "no-repeat",
+                      backgroundPosition: "-100% -100%",
+                    }}
+                  />
+                  
+                  <motion.h1
+                    className="font-primary text-white text-sm 2xs:text-base xs:text-lg sm:text-xl md:text-2xl lg:text-xl xl:text-2xl 2xl:text-3xl tracking-wide uppercase z-10 relative text-center px-1 2xs:px-2 xs:px-3 sm:px-4 md:px-6 lg:px-4 xl:px-6"
+                    animate={{
+                      scale:
+                        hoveredIndex === index && clickedIndex === null
+                          ? 1.05
+                          : 1,
+                      letterSpacing:
+                        hoveredIndex === index && clickedIndex === null
+                          ? "0.1em"
+                          : "0.05em",
+                      opacity:
+                        clickedIndex !== null && clickedIndex !== index
+                          ? 0.85
+                          : 1,
+                    }}
+                    transition={{
+                      scale: { type: "spring", stiffness: 400, damping: 10 },
+                      letterSpacing: { duration: 0.4, ease: "easeOut" },
+                      opacity: { duration: 0.3, ease: "easeOut" },
+                    }}
+                  >
+                    {item.name}
+                  </motion.h1>
+                </motion.div>
+              ))}
+            </div>
+          )}
         </AnimatePresence>
       </div>
     </motion.div>
