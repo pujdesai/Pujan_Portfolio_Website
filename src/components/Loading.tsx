@@ -242,7 +242,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
           {/* Skip Button */}
           <motion.button
             onClick={onComplete}
-            className="absolute bottom-8 right-8 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-primary hover:bg-white/20 transition-all duration-300 z-30"
+            className="absolute bottom-20 right-8 px-4 py-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white font-primary hover:bg-white/20 transition-all duration-300 z-50"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 1.0 }}
