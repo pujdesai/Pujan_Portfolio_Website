@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -34,6 +34,19 @@ const AnimatedRoutes = () => {
 
 const App: React.FC = () => {
   const [loadingDone, setLoadingDone] = useState(false);
+
+  // Check if this is a fresh page load (not a navigation within the app)
+  useEffect(() => {
+    const hasVisitedThisSession = sessionStorage.getItem('hasVisitedThisSession');
+    
+    if (hasVisitedThisSession) {
+      // If user has already seen loading screen in this session, skip it
+      setLoadingDone(true);
+    } else {
+      // First time in this session, show loading screen
+      sessionStorage.setItem('hasVisitedThisSession', 'true');
+    }
+  }, []);
 
   return (
     <Router>
