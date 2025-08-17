@@ -59,7 +59,7 @@ const Skills: React.FC = () => {
     <Section>
       <div className="relative z-10 h-full flex items-center justify-center p-24">
         {/* Skills Grid */}
-        <div className="grid grid-cols-3 gap-20 w-full h-full max-w-8xl">
+        <div className="grid grid-cols-3 gap-20 w-full h-full max-w-8xl max-h-[95vh]">
           {skillCategories.map((category, index) => {
             const colors = getColorClasses(category.color);
             return (
