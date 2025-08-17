@@ -29,7 +29,7 @@ const Projects: React.FC = () => {
     },
     {
       title: "NBA Game Outcome Prediction Model",
-      description: "This repository implements a machine learning project that predicts NBA game outcomes using historical game data. The project retrieves data using the nba_api, computes rolling averages for key game statistics, and trains a classifier to predict whether a team will win. The modeling approach includes data retrieval using nba_api endpoints, data combination and cleaning, feature engineering with rolling averages, target variable creation, model training with Gaussian Naive Bayes classifier, and prediction functions for upcoming games.",
+      description: "Built a machine learning model that predicts NBA game outcomes using historical game data. The project retrieves data using the nba_api, computes rolling averages for key game statistics, and trains a classifier to predict whether a team will win. The modeling approach includes data retrieval using nba_api endpoints, data combination and cleaning, feature engineering with rolling averages, target variable creation, model training with Gaussian Naive Bayes classifier, and prediction functions for upcoming games.",
       githubUrl: "https://github.com/pujdesai/NBA-Prediction-Model",
       hasDemo: false,
       demoUrl: "",
@@ -45,15 +45,15 @@ const Projects: React.FC = () => {
     },
     {
       title: "Chess Game",
-      description: "A comprehensive PvP chess game built with Pygame featuring multiple board themes, last-move highlighting, and valid moves display. Engineered with a modular, scalable architecture applying OOP practices to accelerate feature development and reduce technical debt. Implements all core chess mechanics including move validation, checkmate, stalemate, pawn promotion, en passant, and castling for a complete chess experience.",
-      githubUrl: "",
+      description: "PvP chess game built with Pygame featuring multiple board themes, last-move highlighting, and valid moves display. Engineered with a modular, scalable architecture applying OOP practices to accelerate feature development and reduce technical debt. Implements all core chess mechanics including move validation, checkmate, stalemate, pawn promotion, en passant, and castling for a complete chess experience.",
+      githubUrl: "https://github.com/pujdesai/PvP_Chess",
       hasDemo: true,
       demoUrl: "chess1.png",
       skills: ["Python", "Pygame", "Object-Oriented Programming", "Game Development", "Chess Logic", "Move Validation", "UI/UX Design"]
     },
     {
       title: "Online Banking System",
-      description: "A comprehensive Java-based banking system developed as part of a Scrum Master role, demonstrating both technical implementation and agile project management. The system includes account management, ATM operations, transaction processing, and various financial products. Features a Swing-based user interface and implements core banking functionalities including deposits, withdrawals, transfers, and financial product management (Bonds, Annuities, CDs). Built with modular architecture to ensure maintainability and scalability.",
+      description: "A Java-based banking system developed as part of a Scrum Master role, demonstrating both technical implementation and agile project management. The system includes account management, ATM operations, transaction processing, and various financial products. Features a Swing-based user interface and implements core banking functionalities including deposits, withdrawals, transfers, and financial product management (Bonds, Annuities, CDs). Built with modular architecture to ensure maintainability and scalability.",
       githubUrl: "https://github.com/pujdesai/Online-Bank",
       hasDemo: false,
       demoUrl: "",
