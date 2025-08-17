@@ -237,7 +237,6 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
             transition={{ duration: 1.5, ease: "easeInOut" }}
           >
             <Spline scene="https://prod.spline.design/SyN0I65y1uXR4oRs/scene.splinecode" />
-            <div className="absolute bottom-4 right-4 w-40 h-14 bg-black z-20" />
           </motion.div>
 
           {/* Skip Button */}
