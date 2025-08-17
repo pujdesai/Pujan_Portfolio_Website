@@ -39,7 +39,7 @@ const Skills: React.FC = () => {
       icon: Wrench, 
       title: "Other", 
       color: "amber",
-      skills: ["Adobe Creative Suite", "VS Code", "Eclipse", "IntelliJ", "DrRacket", "Bloomberg", "QuantLib", "MS Office Suite", "Python", "Java", "C++"]
+      skills: ["Adobe Creative Suite", "VS Code", "Eclipse", "IntelliJ", "DrRacket", "Bloomberg", "QuantLib", "MS Office Suite", "Python", "Java", "C++", "Scrum/Agile", "Spline"]
     }
   ];
 
