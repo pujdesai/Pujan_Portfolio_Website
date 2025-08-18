@@ -73,7 +73,7 @@ const Skills: React.FC = () => {
               >
                 {/* Icon box and title in top-left corner */}
                 <motion.div
-                  className="absolute top-3 2xs:top-4 xs:top-5 sm:top-6 md:top-6 lg:top-6 left-3 2xs:left-4 xs:left-5 sm:left-6 md:left-6 lg:left-6 flex items-center gap-2 2xs:gap-3 xs:gap-3 sm:gap-3 md:gap-3 z-10 bg-black/20 backdrop-blur-sm rounded-lg px-2 py-1"
+                  className="absolute top-3 2xs:top-4 xs:top-5 sm:top-6 md:top-6 lg:top-6 left-3 2xs:left-4 xs:left-5 sm:left-6 md:left-6 lg:left-6 flex items-center gap-2 2xs:gap-3 xs:gap-3 sm:gap-3 md:gap-3 z-20 rounded-lg px-2 py-1"
                   initial={{ opacity: 0, scale: 0.5 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.8, delay: 0.4 + (index * 0.1) }}
