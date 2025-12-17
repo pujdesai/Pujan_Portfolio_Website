@@ -5,10 +5,19 @@ const CustomCursor: React.FC = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isPointer, setIsPointer] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
+    // Check if device supports touch
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    setIsTouchDevice(hasTouch);
+    
+    // If touch device, don't show cursor
+    if (hasTouch) return;
+
     const updateCursorPosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      setIsVisible(true); // Show cursor on any mouse movement
     };
 
     const updateCursorType = () => {
@@ -45,6 +54,9 @@ const CustomCursor: React.FC = () => {
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, [position.x, position.y]);
+
+  // Don't render cursor on touch devices
+  if (isTouchDevice) return null;
 
   return (
     <>
