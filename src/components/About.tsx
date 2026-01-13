@@ -228,7 +228,7 @@ const About: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
-                {/* Liminality Capital - Software Engineer (AI/ML) */}
+                {/* Liminality Capital - AI Software Engineer Co-op */}
                 <motion.div
                   className="group relative"
                   initial={{ opacity: 0, y: 20 }}
@@ -240,7 +240,7 @@ const About: React.FC = () => {
                     <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between mb-2 2xs:mb-3 xs:mb-3 sm:mb-3 md:mb-3">
                       <div>
                         <h3 className="text-sm 2xs:text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-primary text-white mb-1 group-hover:text-red-400 transition-colors">
-                          Software Engineer Co-op (AI/ML)
+                          AI Software Engineer Co-op
                         </h3>
                         <p className="text-xs 2xs:text-sm xs:text-base sm:text-base md:text-lg lg:text-lg font-secondary text-white/80">
                           Liminality Capital LP
@@ -248,7 +248,7 @@ const About: React.FC = () => {
                       </div>
                       <div className="text-left xs:text-right mt-1 xs:mt-0">
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-medium">
-                          Jun 2025 - Present
+                          Jun 2025 – Dec 2025
                         </p>
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm">Boston, MA</p>
                       </div>
@@ -257,19 +257,23 @@ const About: React.FC = () => {
                     <ul className="text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-secondary text-white/80 mb-3 2xs:mb-4 xs:mb-4 sm:mb-4 md:mb-4 leading-relaxed space-y-1 2xs:space-y-2 xs:space-y-2 sm:space-y-2">
                       <li className="flex items-start">
                         <span className="text-red-400 mr-2 mt-1">•</span>
-                        <span>Developed custom charting platform using FastAPI and React with Bloomberg data feeds for real-time financial market visualization</span>
+                        <span>Coded end-to-end trading infrastructure automating ~80% of hedge fund workflows across data, risk, pricing, and analytics</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-400 mr-2 mt-1">•</span>
-                        <span>Built AI research agent using OpenAI and Chroma vector database to automatically summarize and extract insights from firm research</span>
+                        <span>Engineered multi-asset ETL pipelines ingesting Bloomberg, Citi, and JPM data into PostgreSQL + TimescaleDB</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-400 mr-2 mt-1">•</span>
-                        <span>Created comprehensive PnL dashboard with interactive charts and analytics to track portfolio performance and risk metrics</span>
+                        <span>Developed institutional analytics platforms enabling P&L, correlation, scenario, and risk analysis across 2,000+ instruments</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-red-400 mr-2 mt-1">•</span>
-                        <span>Engineered financial applications including Portfolio Management System using AG Grid, swaption pricing models, and LBO valuation tools</span>
+                        <span>Created FX option and swaption pricing tools with scenario analysis, Greeks, and volatility surfaces used to monitor trades</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-400 mr-2 mt-1">•</span>
+                        <span>Integrated AI-powered SQL + document search enabling natural-language analysis of positions, P&L, and transactions</span>
                       </li>
                     </ul>
                     
@@ -281,10 +285,19 @@ const About: React.FC = () => {
                         "OpenAI",
                         "Chroma",
                         "AG Grid",
+                        "PostgreSQL",
+                        "TimescaleDB",
+                        "ETL Pipelines",
                         "Financial Modeling",
                         "Charting",
                         "PnL Analytics",
+                        "Risk Analytics",
                         "Swaption Pricing",
+                        "FX Options",
+                        "Greeks",
+                        "Volatility Surfaces",
+                        "AI Search",
+                        "Natural Language Processing",
                         "LBO Models",
                         "Repo Markets",
                       ].map((tech, i) => (
@@ -305,7 +318,7 @@ const About: React.FC = () => {
                   </div>
                 </motion.div>
 
-                {/* EduFlexAI - Software Developer & UI/UX Designer */}
+                {/* EduFlexAI - Software Developer */}
                 <motion.div
                   className="group relative"
                   initial={{ opacity: 0, y: 20 }}
@@ -317,7 +330,7 @@ const About: React.FC = () => {
                     <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between mb-2 2xs:mb-3 xs:mb-3 sm:mb-3 md:mb-3">
                       <div>
                         <h3 className="text-sm 2xs:text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-primary text-white mb-1 group-hover:text-blue-400 transition-colors">
-                          Software Developer & UI/UX Designer
+                          Software Developer
                         </h3>
                         <p className="text-xs 2xs:text-sm xs:text-base sm:text-base md:text-lg lg:text-lg font-secondary text-white/80">
                           EduFlexAI
@@ -325,7 +338,7 @@ const About: React.FC = () => {
                       </div>
                       <div className="text-left xs:text-right mt-1 xs:mt-0">
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-medium">
-                          Jan 2025 - June 2025
+                          Jan 2025 – Jun 2025
                         </p>
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm">Hybrid</p>
                       </div>
@@ -334,41 +347,31 @@ const About: React.FC = () => {
                     <ul className="text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-secondary text-white/80 mb-3 2xs:mb-4 xs:mb-4 sm:mb-4 md:mb-4 leading-relaxed space-y-1 2xs:space-y-2 xs:space-y-2 sm:space-y-2">
                       <li className="flex items-start">
                         <span className="text-blue-400 mr-2 mt-1">•</span>
-                        <span>Contributing to the development of an AI-driven learning platform using Next.js, React, Django, PostgreSQL, and OpenAI</span>
+                        <span>Contributed to the development of an AI-driven learning platform using Next.js, Django, PostgreSQL, and OpenAI</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-400 mr-2 mt-1">•</span>
-                        <span>Developing a "Learn" page enabling GPT-driven, file-based personalized help, context-aware explanations, and code reviews</span>
+                        <span>Developed a "Learn" page with GPT-driven, file-based personalized help, context-aware explanations, and code reviews</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-400 mr-2 mt-1">•</span>
-                        <span>Building a dynamic resource aggregator using Pinecone vector embeddings to surface curated videos, articles, and materials</span>
+                        <span>Built a dynamic resource aggregator using Pinecone vector embeddings to surface curated videos, articles, and materials</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-400 mr-2 mt-1">•</span>
-                        <span>Engineering GitHub webhooks powering real-time project sync, automated feedback loops, and efficient version control</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-blue-400 mr-2 mt-1">•</span>
-                        <span>Crafting scalable UI/UX designs focused on intuitive user flows, modern design systems, and cross-device accessibility</span>
-                      </li>
-                      <li className="flex items-start">
-                        <span className="text-blue-400 mr-2 mt-1">•</span>
-                        <span>Architecting scalable Dockerized infrastructure and CI/CD pipelines to accelerate development, deployment, and onboarding</span>
+                        <span>Architected scalable Dockerized infrastructure and CI/CD pipelines to accelerate development and deployment</span>
                       </li>
                     </ul>
 
                     <div className="flex flex-wrap gap-1 2xs:gap-2 xs:gap-2 sm:gap-2 md:gap-2">
                       {[
                         "Next.js",
-                        "React",
                         "Django",
                         "PostgreSQL",
                         "OpenAI",
                         "Pinecone",
                         "Docker",
                         "CI/CD",
-                        "UI/UX Design",
                       ].map((tech, i) => (
                         <motion.div
                           key={i}

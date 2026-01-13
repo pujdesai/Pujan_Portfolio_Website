@@ -15,31 +15,31 @@ const Skills: React.FC = () => {
       icon: Settings, 
       title: "Backend", 
       color: "emerald",
-      skills: ["Django", "Flask", "FastAPI", "Node.js", "PyDantic", "Uvicorn", "REST APIs", "Postman"]
+      skills: ["Django", "Flask", "FastAPI", "Node.js", "PyDantic", "Uvicorn", "REST APIs", "Postman", "ETL Pipelines"]
     },
     { 
       icon: Database, 
       title: "Database", 
       color: "purple",
-      skills: ["PostgreSQL", "Pinecone", "Chroma", "Prisma", "SQL"]
+      skills: ["PostgreSQL", "TimescaleDB", "Pinecone", "Chroma", "Prisma ORM", "SQL", "Psycopg2"]
     },
     { 
       icon: Cloud, 
       title: "DevOps & Cloud", 
       color: "cyan",
-      skills: ["Git", "Docker", "AWS", "Microsoft Azure", "CI/CD", "Unix/Linux"]
+      skills: ["Git", "Docker", "AWS", "Microsoft Azure", "Azure AI Search", "Azure DevOps", "CI/CD", "Unix/Linux"]
     },
     { 
       icon: Brain, 
       title: "AI & ML", 
       color: "pink",
-      skills: ["Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "SciPy", "Matplotlib", "Seaborn", "Vega-Altair", "D3.js", "Plotly", "OpenAI", "TensorFlow", "Folium", "LLMs", "RAG"]
+      skills: ["Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "SciPy", "Matplotlib", "Seaborn", "Vega-Altair", "D3.js", "Plotly", "OpenAI", "TensorFlow", "Folium", "LLMs", "RAG", "Natural Language Processing"]
     },
     { 
       icon: Wrench, 
       title: "Other", 
       color: "amber",
-      skills: ["Adobe Creative Suite", "VS Code", "Eclipse", "IntelliJ", "DrRacket", "Bloomberg", "QuantLib", "MS Office Suite", "Python", "Java", "C++", "Scrum/Agile", "Spline"]
+      skills: ["Adobe Creative Suite", "VS Code", "Eclipse", "IntelliJ", "DrRacket", "Bloomberg API", "QuantLib", "MS Office Suite", "Python", "Java", "C++", "Bash", "Scrum/Agile", "Spline", "Financial Modeling", "Greeks", "Volatility Surfaces", "FX Options", "Swaptions"]
     }
   ];
 
@@ -65,7 +65,7 @@ const Skills: React.FC = () => {
             return (
               <motion.div
                 key={index}
-                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl xs:rounded-2xl md:rounded-2xl relative p-3 2xs:p-4 xs:p-5 sm:p-6 md:p-6 lg:p-6 overflow-y-auto lg:overflow-visible"
+                className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl xs:rounded-2xl md:rounded-2xl relative p-3 2xs:p-4 xs:p-5 sm:p-6 md:p-6 lg:p-6 overflow-y-auto"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -89,7 +89,7 @@ const Skills: React.FC = () => {
                 </motion.div>
 
                 {/* Skills tags */}
-                <div className="absolute top-16 2xs:top-20 xs:top-24 sm:top-28 md:top-28 lg:top-28 left-2 2xs:left-3 xs:left-4 sm:left-5 md:left-5 lg:left-5 right-2 2xs:right-3 xs:right-4 sm:right-5 md:right-5 lg:right-5 bottom-2 2xs:bottom-3 xs:bottom-4 sm:bottom-5 md:bottom-5 lg:bottom-5">
+                <div className="absolute top-16 2xs:top-20 xs:top-24 sm:top-28 md:top-28 lg:top-28 left-2 2xs:left-3 xs:left-4 sm:left-5 md:left-5 lg:left-5 right-2 2xs:right-3 xs:right-4 sm:right-5 md:right-5 lg:right-5 bottom-2 2xs:bottom-3 xs:bottom-4 sm:bottom-5 md:bottom-5 lg:bottom-5 overflow-y-auto">
                   <div className="flex flex-wrap gap-1 2xs:gap-1.5 xs:gap-2 sm:gap-2 md:gap-2 [&>*]:mb-1 2xs:[&>*]:mb-1.5 xs:[&>*]:mb-2 sm:[&>*]:mb-2 md:[&>*]:mb-2">
                     {category.skills.map((skill, skillIndex) => (
                       <motion.div

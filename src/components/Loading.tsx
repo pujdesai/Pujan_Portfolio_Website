@@ -145,7 +145,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
   useEffect(() => {
     const barTimeout = setTimeout(() => {
       setShowBar(true);
-    }, 1500);
+    }, 1050);
     return () => clearTimeout(barTimeout);
   }, []);
 
@@ -153,7 +153,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
     if (showBar) {
       const progressInterval = setInterval(() => {
         setProgress(prev => {
-          const newProgress = prev + 1.25; // 1.25% every 100ms = 100% in 8s (after 1.5s delay)
+          const newProgress = prev + 3.57; // 3.57% every 100ms = 100% in 2.8s
           
           // Show last message at 90%
           if (newProgress >= 90 && currentMessage < messages.length - 1) {
@@ -181,7 +181,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
           }
           return prev;
         });
-      }, 1800); // 1.8s per message for first 4 messages (7.2s total for 0-90%)
+      }, 630);
 
       return () => clearInterval(messageInterval);
     }
@@ -191,7 +191,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
     if (fillComplete) {
       const fadeOutDelay = setTimeout(() => {
         setStartBarFadeOut(true);
-      }, 1000);
+      }, 700);
       return () => clearTimeout(fadeOutDelay);
     }
   }, [fillComplete]);
@@ -201,7 +201,7 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
       const doneTimeout = setTimeout(() => {
         setDone(true);
         onComplete();
-      }, 1250);
+      }, 875);
       return () => clearTimeout(doneTimeout);
     }
   }, [startBarFadeOut, onComplete]);
@@ -287,11 +287,10 @@ const Loading: React.FC<LoadingProps> = ({ onComplete }) => {
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}
                   transition={{
-                    duration: 8,
+                    duration: 2.8,
                     ease: "easeInOut",
                     onComplete: () => {
-                      // Wait 1 second after reaching 100% before starting fade out
-                      setTimeout(() => setFillComplete(true), 1000);
+                      setTimeout(() => setFillComplete(true), 700);
                     },
                   }}
                 />
