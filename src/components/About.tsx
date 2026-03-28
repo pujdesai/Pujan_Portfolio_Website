@@ -228,6 +228,75 @@ const About: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
               >
+                {/* StatArb Research Engine - Project Manager */}
+                <motion.div
+                  className="group relative"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.05 }}
+                >
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-violet-400 to-violet-400/20 rounded-full"></div>
+                  <div className="ml-3 2xs:ml-4 xs:ml-5 sm:ml-5 md:ml-6 lg:ml-6">
+                    <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between mb-2 2xs:mb-3 xs:mb-3 sm:mb-3 md:mb-3">
+                      <div>
+                        <h3 className="text-sm 2xs:text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-primary text-white mb-1 group-hover:text-violet-400 transition-colors">
+                          Project Manager
+                        </h3>
+                        <p className="text-xs 2xs:text-sm xs:text-base sm:text-base md:text-lg lg:text-lg font-secondary text-white/80">
+                          StatArb Research Engine
+                        </p>
+                      </div>
+                      <div className="text-left xs:text-right mt-1 xs:mt-0">
+                        <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-medium">
+                          Jan 2026 – Present
+                        </p>
+                        <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm">Boston, MA</p>
+                      </div>
+                    </div>
+                    
+                    <ul className="text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-secondary text-white/80 mb-3 2xs:mb-4 xs:mb-4 sm:mb-4 md:mb-4 leading-relaxed space-y-1 2xs:space-y-2 xs:space-y-2 sm:space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-violet-400 mr-2 mt-1">•</span>
+                        <span>Leading a 7-person developer team to build a research platform for a quantitative hedge fund, owning product roadmap</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-violet-400 mr-2 mt-1">•</span>
+                        <span>Serving as sole client liaison to firm stakeholders, delivering weekly demos while managing 3 teams through sprint cycles</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-violet-400 mr-2 mt-1">•</span>
+                        <span>Shipping a full-stack system automating pair screening, signal generation, and backtesting, replacing manual workflows</span>
+                      </li>
+                    </ul>
+                    
+                    <div className="flex flex-wrap gap-1 2xs:gap-2 xs:gap-2 sm:gap-2 md:gap-2">
+                      {[
+                        "Full-Stack Development",
+                        "Quantitative Finance",
+                        "Pair Screening",
+                        "Signal Generation",
+                        "Backtesting",
+                        "Scrum/Agile",
+                        "Product Management",
+                        "Team Leadership",
+                      ].map((tech, i) => (
+                        <motion.div
+                          key={i}
+                          className="px-2 py-1 2xs:px-2 2xs:py-1 xs:px-3 xs:py-1 sm:px-3 sm:py-1 md:px-3 md:py-1 bg-violet-400/10 border border-violet-400/20 rounded-full hover:bg-violet-400/20 transition-colors"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={{ opacity: 1, scale: 1 }}
+                          transition={{ delay: 0.6 + i * 0.05, duration: 0.3 }}
+                          whileHover={{ scale: 1.05 }}
+                        >
+                          <span className="text-xs 2xs:text-xs xs:text-xs sm:text-xs md:text-xs font-secondary text-white/80 whitespace-nowrap">
+                            {tech}
+                          </span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+
                 {/* Liminality Capital - AI Software Engineer Co-op */}
                 <motion.div
                   className="group relative"

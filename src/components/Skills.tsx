@@ -27,7 +27,7 @@ const Skills: React.FC = () => {
       icon: Cloud, 
       title: "DevOps & Cloud", 
       color: "cyan",
-      skills: ["Git", "Docker", "AWS", "Microsoft Azure", "Azure AI Search", "Azure DevOps", "CI/CD", "Unix/Linux"]
+      skills: ["Git", "Docker", "Redis", "AWS", "Microsoft Azure", "Azure AI Search", "Azure DevOps", "CI/CD", "Unix/Linux"]
     },
     { 
       icon: Brain, 
