@@ -248,7 +248,7 @@ const About: React.FC = () => {
                       </div>
                       <div className="text-left xs:text-right mt-1 xs:mt-0">
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-medium">
-                          Jan 2026 – Present
+                          Jan 2026 – Apr 2026
                         </p>
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm">Boston, MA</p>
                       </div>
@@ -257,7 +257,7 @@ const About: React.FC = () => {
                     <ul className="text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-secondary text-white/80 mb-3 2xs:mb-4 xs:mb-4 sm:mb-4 md:mb-4 leading-relaxed space-y-1 2xs:space-y-2 xs:space-y-2 sm:space-y-2">
                       <li className="flex items-start">
                         <span className="text-violet-400 mr-2 mt-1">•</span>
-                        <span>Leading a 7-person developer team to build a research platform for a quantitative hedge fund, owning product roadmap</span>
+                        <span>Led a 7-person developer team to build a research platform for a quantitative hedge fund, owning product roadmap</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-violet-400 mr-2 mt-1">•</span>
@@ -297,7 +297,7 @@ const About: React.FC = () => {
                   </div>
                 </motion.div>
 
-                {/* Liminality Capital - AI Software Engineer Co-op */}
+                {/* Liminality Capital - AI Software Engineer Part-Time & Co-op */}
                 <motion.div
                   className="group relative"
                   initial={{ opacity: 0, y: 20 }}
@@ -309,7 +309,7 @@ const About: React.FC = () => {
                     <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between mb-2 2xs:mb-3 xs:mb-3 sm:mb-3 md:mb-3">
                       <div>
                         <h3 className="text-sm 2xs:text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-primary text-white mb-1 group-hover:text-red-400 transition-colors">
-                          AI Software Engineer Co-op
+                          AI Software Engineer Part-Time
                         </h3>
                         <p className="text-xs 2xs:text-sm xs:text-base sm:text-base md:text-lg lg:text-lg font-secondary text-white/80">
                           Liminality Capital LP
@@ -317,9 +317,21 @@ const About: React.FC = () => {
                       </div>
                       <div className="text-left xs:text-right mt-1 xs:mt-0">
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-medium">
-                          Jun 2025 – Dec 2025
+                          Jan 2026 – Present
                         </p>
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm">Boston, MA</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between mb-2 2xs:mb-3 xs:mb-3 sm:mb-3 md:mb-3 mt-2 pt-2 border-t border-white/10">
+                      <div>
+                        <h3 className="text-sm 2xs:text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-primary text-white mb-1 group-hover:text-red-400 transition-colors">
+                          AI Software Engineer Co-op
+                        </h3>
+                      </div>
+                      <div className="text-left xs:text-right mt-1 xs:mt-0">
+                        <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-medium">
+                          Jun 2025 – Dec 2025
+                        </p>
                       </div>
                     </div>
                     
