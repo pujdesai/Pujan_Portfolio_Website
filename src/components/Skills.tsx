@@ -15,7 +15,7 @@ const Skills: React.FC = () => {
       icon: Settings, 
       title: "Backend", 
       color: "emerald",
-      skills: ["Django", "Flask", "FastAPI", "Node.js", "PyDantic", "Uvicorn", "REST APIs", "Postman", "ETL Pipelines"]
+      skills: ["Django", "Flask", "FastAPI", "Node.js", "PyDantic", "Uvicorn", "REST APIs", "Postman", "ETL Pipelines", "Microsoft Graph", "RQ"]
     },
     { 
       icon: Database, 
@@ -27,19 +27,19 @@ const Skills: React.FC = () => {
       icon: Cloud, 
       title: "DevOps & Cloud", 
       color: "cyan",
-      skills: ["Git", "Docker", "Redis", "AWS", "Microsoft Azure", "Azure AI Search", "Azure DevOps", "CI/CD", "Unix/Linux"]
+      skills: ["Git", "Docker", "Redis", "AWS", "Microsoft Azure", "Azure AI Search", "Azure DevOps", "CI/CD", "Unix/Linux", "GitHub Actions", "Vitest", "Playwright", "pytest"]
     },
     { 
       icon: Brain, 
       title: "AI & ML", 
       color: "pink",
-      skills: ["Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "SciPy", "Matplotlib", "Seaborn", "Vega-Altair", "D3.js", "Plotly", "OpenAI", "TensorFlow", "Folium", "LLMs", "RAG", "Natural Language Processing"]
+      skills: ["Pandas", "NumPy", "Scikit-learn", "Jupyter Notebook", "SciPy", "Matplotlib", "Seaborn", "Vega-Altair", "D3.js", "Plotly", "OpenAI", "TensorFlow", "Folium", "LLMs", "RAG", "Natural Language Processing", "Claude API", "Tool Calling", "LLM Evals", "Prompt Engineering"]
     },
     { 
       icon: Wrench, 
       title: "Other", 
       color: "amber",
-      skills: ["Adobe Creative Suite", "VS Code", "Eclipse", "IntelliJ", "DrRacket", "Bloomberg API", "QuantLib", "MS Office Suite", "Python", "Java", "C++", "Bash", "Scrum/Agile", "Spline", "Financial Modeling", "Greeks", "Volatility Surfaces", "FX Options", "Swaptions"]
+      skills: ["Adobe Creative Suite", "VS Code", "Eclipse", "IntelliJ", "DrRacket", "Bloomberg API", "Bloomberg EMSX", "QuantLib", "MS Office Suite", "Python", "Java", "C++", "Bash", "Scrum/Agile", "Spline", "Financial Modeling", "Greeks", "Volatility Surfaces", "FX Options", "Swaptions"]
     }
   ];
 

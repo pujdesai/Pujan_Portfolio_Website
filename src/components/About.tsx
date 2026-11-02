@@ -111,13 +111,19 @@ const About: React.FC = () => {
                     Northeastern University Honors College. I am passionate
                     about software engineering, AI and machine learning, and
                     data analytics, combining problem-solving and collaboration
-                    to create meaningful impact. Beyond academics, I enjoy
-                    creative pursuits like graphic design and working on
-                    projects that blend technology and innovation. In my free
-                    time, I love hanging out with friends, listening to music,
-                    playing pickleball and tennis, going to the gym, and
-                    cooking. I am always open to connecting, and I would love to
-                    discuss ideas and opportunities. Feel free to reach out!
+                    to create meaningful impact. Most recently, I've been
+                    building production AI and trading systems for a hedge
+                    fund, from LLM-powered trade entry to order management and
+                    reconciliation tools. Beyond academics, I enjoy creative
+                    pursuits like graphic design and drawing, and working on
+                    projects that blend technology and innovation. I'm also a
+                    member of TAMID Group at Northeastern, a BAPS volunteer,
+                    and fluent in Gujarati. In my free time, I love hanging out
+                    with friends, listening to music, playing pickleball,
+                    tennis, basketball, and baseball, watching football, going
+                    to the gym, hiking, fashion, building LEGOs, and cooking. I
+                    am always open to connecting, and I would love to discuss
+                    ideas and opportunities. Feel free to reach out!
                   </motion.p>
                 </motion.div>
               </div>
@@ -151,6 +157,8 @@ const About: React.FC = () => {
                     <span>2023 - Present</span>
                     <span className="hidden xs:inline">•</span>
                     <span>Expected Graduation: May 2027</span>
+                    <span className="hidden xs:inline">•</span>
+                    <span>GPA: 3.78/4.00</span>
                   </div>
                 </motion.div>
 
@@ -165,10 +173,14 @@ const About: React.FC = () => {
                   </h4>
                   <div className="flex flex-wrap gap-2 2xs:gap-2 xs:gap-3 sm:gap-3 md:gap-3 justify-center [&>*]:mb-2 2xs:[&>*]:mb-2 xs:[&>*]:mb-3 sm:[&>*]:mb-3 md:[&>*]:mb-3">
                     {[
+                      "Software Engineering",
                       "Object-Oriented Design",
                       "Algorithms & Data",
+                      "Database Design",
                       "Information Presentation & Visualization",
                       "Foundations of Data Science",
+                      "Statistics",
+                      "Fintech",
                       "Fundamentals of Computer Science 1 & 2",
                       "Discrete Structures",
                       "Financial Management",
@@ -198,10 +210,10 @@ const About: React.FC = () => {
                   className="text-center"
                 >
                   <h4 className="text-sm 2xs:text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl uppercase font-primary text-white mb-2 2xs:mb-3 xs:mb-4 sm:mb-4 md:mb-4">
-                    Achievements
+                    Achievements & Activities
                   </h4>
-                  <div className="flex flex-col xs:flex-row justify-center gap-2 2xs:gap-3 xs:gap-4 sm:gap-4 md:gap-6 lg:gap-6">
-                    {["Dean's List", "Honors College"].map((achievement, i) => (
+                  <div className="flex flex-col xs:flex-row xs:flex-wrap justify-center gap-2 2xs:gap-3 xs:gap-4 sm:gap-4 md:gap-6 lg:gap-6">
+                    {["Dean's List", "Honors College", "TAMID Group at Northeastern", "BAPS Volunteer"].map((achievement, i) => (
                       <motion.div
                         key={i}
                         className="flex items-center justify-center gap-1 2xs:gap-2 xs:gap-2 sm:gap-2 px-2 py-1 2xs:px-3 2xs:py-1 xs:px-4 xs:py-2 sm:px-4 sm:py-2 md:px-4 md:py-2 bg-emerald-400/20 border border-emerald-400/30 rounded-full"
@@ -261,11 +273,15 @@ const About: React.FC = () => {
                       </li>
                       <li className="flex items-start">
                         <span className="text-violet-400 mr-2 mt-1">•</span>
-                        <span>Serving as sole client liaison to firm stakeholders, delivering weekly demos while managing 3 teams through sprint cycles</span>
+                        <span>Served as sole client liaison to firm stakeholders, delivering weekly demos while managing 3 teams through sprint cycles</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-violet-400 mr-2 mt-1">•</span>
-                        <span>Shipping a full-stack system automating pair screening, signal generation, and backtesting, replacing manual workflows</span>
+                        <span>Shipped a full-stack system automating pair screening, signal generation, and backtesting, replacing manual workflows</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-violet-400 mr-2 mt-1">•</span>
+                        <span>Architected Redis + RQ job queues with Dockerized workers and hash-keyed caching for repeat backtests and signal runs</span>
                       </li>
                     </ul>
                     
@@ -276,6 +292,10 @@ const About: React.FC = () => {
                         "Pair Screening",
                         "Signal Generation",
                         "Backtesting",
+                        "Redis",
+                        "RQ Job Queues",
+                        "Docker",
+                        "Caching",
                         "Scrum/Agile",
                         "Product Management",
                         "Team Leadership",
@@ -297,7 +317,7 @@ const About: React.FC = () => {
                   </div>
                 </motion.div>
 
-                {/* Liminality Capital - AI Software Engineer Part-Time & Co-op */}
+                {/* Liminality Capital - AI Software Engineer, Part-Time & Co-op */}
                 <motion.div
                   className="group relative"
                   initial={{ opacity: 0, y: 20 }}
@@ -309,6 +329,50 @@ const About: React.FC = () => {
                     <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between mb-2 2xs:mb-3 xs:mb-3 sm:mb-3 md:mb-3">
                       <div>
                         <h3 className="text-sm 2xs:text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-primary text-white mb-1 group-hover:text-red-400 transition-colors">
+                          AI Software Engineer
+                        </h3>
+                        <p className="text-xs 2xs:text-sm xs:text-base sm:text-base md:text-lg lg:text-lg font-secondary text-white/80">
+                          Liminality Capital LP
+                        </p>
+                      </div>
+                      <div className="text-left xs:text-right mt-1 xs:mt-0">
+                        <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-medium">
+                          Jul 2026 – Oct 2026
+                        </p>
+                        <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm">Boston, MA</p>
+                      </div>
+                    </div>
+
+                    <ul className="text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-secondary text-white/80 mb-3 2xs:mb-4 xs:mb-4 sm:mb-4 md:mb-4 leading-relaxed space-y-1 2xs:space-y-2 xs:space-y-2 sm:space-y-2">
+                      <li className="flex items-start">
+                        <span className="text-red-400 mr-2 mt-1">•</span>
+                        <span>Built the firm's production order management system across every asset class it trades, used daily by the PMs and traders</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-400 mr-2 mt-1">•</span>
+                        <span>Launched AI trade entry on the Claude API, turning plain-English orders into validated multi-leg tickets with AI review</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-400 mr-2 mt-1">•</span>
+                        <span>Designed an AI data tool turning natural-language requests into validated data grids over 8 datasets, passing 95/95 eval cases</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-400 mr-2 mt-1">•</span>
+                        <span>Engineered an LLM reconciliation pipeline that reads broker emails via Microsoft Graph, matches fills, and flags breaks</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-400 mr-2 mt-1">•</span>
+                        <span>Integrated Bloomberg EMSX in production via a Python desktop agent that routes approved orders and syncs all fills back</span>
+                      </li>
+                      <li className="flex items-start">
+                        <span className="text-red-400 mr-2 mt-1">•</span>
+                        <span>Backed every feature with 4,200+ automated tests, LLM eval suites rerun on each prompt change, and GitHub Actions CI</span>
+                      </li>
+                    </ul>
+
+                    <div className="flex flex-col xs:flex-row xs:items-start xs:justify-between mb-2 2xs:mb-3 xs:mb-3 sm:mb-3 md:mb-3 mt-2 pt-2 border-t border-white/10">
+                      <div>
+                        <h3 className="text-sm 2xs:text-base xs:text-lg sm:text-lg md:text-xl lg:text-xl xl:text-2xl font-primary text-white mb-1 group-hover:text-red-400 transition-colors">
                           AI Software Engineer Part-Time
                         </h3>
                         <p className="text-xs 2xs:text-sm xs:text-base sm:text-base md:text-lg lg:text-lg font-secondary text-white/80">
@@ -317,7 +381,7 @@ const About: React.FC = () => {
                       </div>
                       <div className="text-left xs:text-right mt-1 xs:mt-0">
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-medium">
-                          Jan 2026 – Present
+                          Jan 2026 – Jun 2026
                         </p>
                         <p className="text-white/60 text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm">Boston, MA</p>
                       </div>
@@ -360,6 +424,18 @@ const About: React.FC = () => {
                     
                     <div className="flex flex-wrap gap-1 2xs:gap-2 xs:gap-2 sm:gap-2 md:gap-2">
                       {[
+                        "Claude API",
+                        "Tool Calling",
+                        "LLM Evals",
+                        "Prompt Engineering",
+                        "Order Management Systems",
+                        "Bloomberg EMSX",
+                        "Microsoft Graph",
+                        "Trade Reconciliation",
+                        "Vitest",
+                        "Playwright",
+                        "pytest",
+                        "GitHub Actions",
                         "FastAPI",
                         "React",
                         "Bloomberg API",
@@ -428,7 +504,7 @@ const About: React.FC = () => {
                     <ul className="text-xs 2xs:text-xs xs:text-sm sm:text-sm md:text-sm font-secondary text-white/80 mb-3 2xs:mb-4 xs:mb-4 sm:mb-4 md:mb-4 leading-relaxed space-y-1 2xs:space-y-2 xs:space-y-2 sm:space-y-2">
                       <li className="flex items-start">
                         <span className="text-blue-400 mr-2 mt-1">•</span>
-                        <span>Contributed to the development of an AI-driven learning platform using Next.js, Django, PostgreSQL, and OpenAI</span>
+                        <span>Contributed to the development of an AI-driven learning platform on a 5+ dev team using Next.js, Django, PostgreSQL, and OpenAI</span>
                       </li>
                       <li className="flex items-start">
                         <span className="text-blue-400 mr-2 mt-1">•</span>
